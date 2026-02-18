@@ -1,0 +1,74 @@
+:root{
+  --cardig: #092952;
+  --muted: #6b7280;
+  --bg: #f6f8fb;
+  --card-bg: #ffffff;
+  --shadow: rgba(15,23,42,0.06);
+  --radius: 10px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; background:var(--bg); color:#0f172a; -webkit-font-smoothing:antialiased}
+.app-container{display:flex; gap:20px; padding:20px; align-items:flex-start; max-width:1200px; margin:18px auto;}
+
+/* Header */
+.top-header{display:flex; gap:14px; align-items:center; margin-bottom:8px}
+.brand-logo-container{width:68px; height:68px; border-radius:14px; overflow:hidden; background:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 18px var(--shadow)}
+.brand-logo-container img{max-width:100%; max-height:100%; object-fit:contain}
+.brand-text h1{font-size:16px; margin:0; color:var(--cardig); letter-spacing:0.6px}
+.brand-text p{font-size:12px; margin:2px 0 0 0; color:var(--muted)}
+
+/* Layout */
+.main-content{flex:1; max-width:760px}
+.sidebar{width:320px}
+
+/* Cards & sections */
+.section-card{background:var(--card-bg); padding:14px; border-radius:var(--radius); box-shadow:0 6px 18px var(--shadow); margin-bottom:14px}
+.section-title{margin:0 0 10px 0; font-size:14px; color:var(--cardig)}
+
+/* Grids */
+.grid-2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
+.form-group{display:flex; flex-direction:column; gap:6px; margin-bottom:8px}
+.form-group.last{margin-bottom:0}
+.form-group label{font-size:12px; color:var(--muted)}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea{padding:8px 10px; border-radius:8px; border:1px solid #e6eef6; background:#fff; font-size:13px; color:#081127}
+
+/* Tables */
+.table-responsive{overflow:auto; background:transparent}
+table{width:100%; border-collapse:collapse; font-size:13px}
+table thead th{background:#f8fafc; text-align:left; padding:8px; font-weight:700; color:#0f172a; border-bottom:1px solid #e6eef6}
+table tbody td{padding:8px; border-bottom:1px solid #f1f5f9}
+.coord-email-select, .coord-email-input, .fin-price, .fin-qty, .fin-item, .sponsor-name, .sponsor-total {width:100%; box-sizing:border-box; padding:6px 8px; border-radius:6px; border:1px solid #e6eef6}
+
+/* Buttons */
+.btn-primary{display:block; width:100%; padding:10px 12px; border-radius:8px; background:var(--cardig); color:#fff; border:none; font-weight:700; cursor:pointer}
+.btn-ghost{padding:8px 10px; border-radius:8px; background:transparent; color:#0f172a; border:1px solid #e2e8f0; cursor:pointer}
+.btn-export{display:block; width:100%; padding:8px; margin-bottom:8px; border-radius:8px; border:1px solid #e6eef6; background:#fff; cursor:pointer}
+
+/* Sidebar cards */
+.status-card{background:linear-gradient(180deg, #ffffff, #fbfdff); padding:12px; border-radius:8px; box-shadow:0 6px 12px var(--shadow); margin-bottom:12px}
+.status-item{display:flex; justify-content:space-between; align-items:center; padding:6px 0}
+.status-label{font-size:12px; color:var(--muted)}
+.status-value{font-weight:700; color:#0f172a}
+
+/* Misc */
+.help-card{padding:12px; border-radius:8px; background:#fff; box-shadow:0 6px 12px var(--shadow)}
+.divider{height:1px; background:#eef2f7; margin:12px 0}
+
+/* small screens */
+@media (max-width: 920px){
+  .app-container{flex-direction:column; padding:12px}
+  .sidebar{width:100%}
+  .main-content{width:100%}
+  .grid-3{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
+}
